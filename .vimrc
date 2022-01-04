@@ -11,13 +11,11 @@ set noerrorbells
 set encoding=utf-8
 set pumheight=10
 set fileencoding=utf-8
-set termguicolors
 set ruler
 set cmdheight=1
 set mouse=a
 set splitbelow
 set splitright
-set t_Co=256
 set tabstop=2
 set shiftwidth=2
 set smarttab
@@ -27,7 +25,7 @@ set autoindent
 set laststatus=0
 set incsearch
 set scrolloff=6
-set background=dark
+set clipboard=unnamedplus
 set formatoptions-=c
 set formatoptions-=r
 set formatoptions-=o
@@ -41,6 +39,21 @@ vnoremap > >gv
 call plug#begin('~/.vim/plugged')
 
 Plug 'jiangmiao/auto-pairs'
-Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
+
+nnoremap <leader>q :NERDTreeToggle<CR>
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
