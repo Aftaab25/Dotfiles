@@ -2,7 +2,7 @@
 
 My dotfiles for various programs that I use.
 
-### Kitty Config
+### Vim Config
 
 To Copy/Paste text from vim to other applications: </br>
 * Install the following to use clipboard with vim
