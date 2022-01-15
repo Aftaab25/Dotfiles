@@ -19,16 +19,23 @@ echo "Installing Browsers: Google Chrome, Epiphany, Brave\n"
 echo "===============================================\n"
 yay -S brave-bin google-chrome epiphany brave-bin
 
-echo "Installing IDEs and text-editors: Intellij-Idea\n"
+echo "Installing IDEs and text-editors\n"
 echo "===============================================\n"
-yay -S intellij-idea-community-edition
+yay -S intellij-idea-community-edition pycharm-community-edition visual-studio-code-insiders-bin visual-studio-code-bin geany
+yay -S sublime-text-4 notepadqq 
+
+echo "Installing Dev Tools\n"
+echo "===============================================\n"
+yay -S github-desktop-bin gimp krita
 
 echo "Installing IDEs and text-editors: Intellij-Idea\n"
 echo "===============================================\n"
-yay -S spotify 
+yay -S spotify telegram-desktop-bin vlc okular libreoffice-still
 #yay -S alacritty
 
 #installing oh-my-zsh
+echo "Installing ohmyzsh\n"
+echo "===============================================\n"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 #git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 #git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
