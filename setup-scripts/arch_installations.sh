@@ -34,7 +34,7 @@ yay -S sublime-text-4 notepadqq
 echo -e "===============================================\n"
 echo -e "Installing Dev Tools\n"
 echo -e "===============================================\n"
-yay -S github-desktop-bin gimp krita
+yay -S github-desktop-bin gimp krita obs-studio
 
 echo -e "===============================================\n"
 echo -e "Installing other apps\n"
