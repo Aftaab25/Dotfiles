@@ -2,13 +2,30 @@
 
 # Installing essential apps
 #sudo pacman -S yay
-sudo pacman -S preload vim neovim xsel nodejs npm yarn zsh tree tmux
+echo "Installing the following apps: \n1. Vim\n2. Neovim\n3. xsel(Clipboard for vim & neovim)\n4. nodejs\n5. npm\n6. yarn\n7. zsh\n8. tree\n9. tmux\n"
+echo "===============================================\n"
+sudo pacman -S vim neovim xsel nodejs npm yarn zsh tree tmux
+
+# Installing Courier-Code font
+yay -S ttf-courier-code
 
 # Installing jdk-17 & jre-17
+echo "Installing JAVA (jdk-17 & jre-17)\n"
+echo "===============================================\n"
 yay -S jdk jre
 
 # For installing browsers, IDEs, text-editors and other apps
-yay -S brave-bin spotify google-chrome intellij-idea-community-edition
+echo "Installing Browsers: Google Chrome, Epiphany, Brave\n"
+echo "===============================================\n"
+yay -S brave-bin google-chrome epiphany brave-bin
+
+echo "Installing IDEs and text-editors: Intellij-Idea\n"
+echo "===============================================\n"
+yay -S intellij-idea-community-edition
+
+echo "Installing IDEs and text-editors: Intellij-Idea\n"
+echo "===============================================\n"
+yay -S spotify 
 #yay -S alacritty
 
 #installing oh-my-zsh
