@@ -1,17 +1,22 @@
 #!/bin/bash
 
 # Installing essential apps
-sudo pacman -S yay
-sudo pacman -S preload vim neovim xsel nodejs npm yarn zsh nitrogen arandr kitty curl git wget tree tmux
-yay -S alacritty
+#sudo pacman -S yay
+sudo pacman -S preload vim neovim xsel nodejs npm yarn zsh tree tmux
+
+# Installing jdk-17 & jre-17
+yay -S jdk jre
+
+# For installing browsers, IDEs, text-editors and other apps
+yay -S brave-bin spotify google-chrome intellij-idea-community-edition
+#yay -S alacritty
 
 #installing oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+#git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
 # Installing brave browser
-yay -S brave-bin
 
 # Creating necessary directories
 # alacritty dir
