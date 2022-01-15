@@ -9,9 +9,9 @@ sudo pacman -S vim neovim xsel nodejs npm yarn zsh tree tmux
 
 # Installing Courier-Code font
 echo -e "===============================================\n"
-echo -e "Installing Courier-Code font\n"
+echo -e "Installing Courier-Code font and JetBrainsMono font\n"
 echo -e "===============================================\n"
-yay -S ttf-courier-code
+yay -S ttf-courier-code ttf-jetbrains-mono
 
 # Installing jdk-17 & jre-17
 echo -e "===============================================\n"
