@@ -40,7 +40,7 @@ sudo apt install brave-browser
 echo -e "===============================================\n"
 echo -e "Installing JAVA (jdk-17 & jre-17)\n"
 echo -e "===============================================\n"
-sudo apt install openjdk-17-jre-headless openjdk-17-jre-headless
+sudo apt install openjdk-17-jre-headless openjdk-17-jdk-headless
 
 
 # installing Epiphany browser
