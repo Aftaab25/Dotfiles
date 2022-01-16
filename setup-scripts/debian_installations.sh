@@ -50,11 +50,30 @@ echo -e "===============================================\n"
 sudo apt install epiphany-browser
 
 
-# installing Notepadqq
+# installing other tools
 echo -e "===============================================\n"
-echo -e "Installing Notepadqq\n"
+echo -e "Installing other tools\n"
 echo -e "===============================================\n"
-sudo apt install notepadqq gimp krita obs-studio vlc 
+sudo apt install notepadqq gimp krita obs-studio vlc geany
+
+
+# installing Sublime text editor
+echo -e "===============================================\n"
+echo -e "Installing sublime-text-4\n"
+echo -e "===============================================\n"
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt-get install apt-transport-https
+echo -e "(Installing the stable branch)\n"
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
+sudo apt-get install sublime-text
+
+
+# installing Virtual Box
+echo -e "===============================================\n"
+echo -e "Installing Virtual Box\n"
+echo -e "===============================================\n"
+sudo apt install virtualbox virtualbox-ext-pack
 
 
 # Installing vim-plug for vim and neovim
