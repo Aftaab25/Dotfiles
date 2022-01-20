@@ -5,7 +5,7 @@
 echo -e "===============================================\n"
 echo -e "Installing the following apps: \n1. Vim\n2. Neovim\n3. xsel(Clipboard for vim & neovim)\n4. nodejs\n5. npm\n6. yarn\n7. zsh\n8. tree\n9. tmux\n"
 echo -e "===============================================\n"
-sudo pacman -S vim neovim xsel nodejs npm yarn zsh tree tmux
+sudo pacman -S vim htop neovim xsel nodejs npm yarn zsh tree tmux
 
 # Installing Courier-Code font
 echo -e "===============================================\n"
