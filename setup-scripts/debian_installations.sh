@@ -54,7 +54,7 @@ sudo apt install epiphany-browser
 echo -e "===============================================\n"
 echo -e "Installing other tools\n"
 echo -e "===============================================\n"
-sudo apt install notepadqq gimp krita obs-studio vlc geany
+sudo apt install notepadqq gimp krita obs-studio vlc geany dconf-editor
 
 
 # installing Sublime text editor
