@@ -8,14 +8,13 @@
 [[ -f ~/.welcome_screen ]] && . ~/.welcome_screen
 
 _set_liveuser_PS1() {
-    #PS1='[\u@\h \w]\$ '
-    PS1='\u@\h:\w\$ '
+    PS1='[\[\e[31m\]\u\[\e[00m\]@\[\e[36m\]\h\[\e[00m\] \[\e[35m\]\w\[\e[00m\]]\$ '
     if [ "$(whoami)" = "liveuser" ] ; then
         local iso_version="$(grep ^VERSION= /usr/lib/endeavouros-release 2>/dev/null | cut -d '=' -f 2)"
         if [ -n "$iso_version" ] ; then
             local prefix="eos-"
             local iso_info="$prefix$iso_version"
-            PS1="[\u@$iso_info \W]\$ "
+            PS1="[\u@$iso_info \w]\$ "
         fi
     fi
 }
@@ -86,5 +85,6 @@ _open_files_for_editing() {
 # alias pacdiff=eos-pacdiff
 ################################################################################
 
-alias neofetch="neofetch --ascii_distro arch"
-#PS1='\u@\h:\w\$ '
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION
