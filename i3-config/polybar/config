@@ -33,6 +33,8 @@ pink = #ff79c6
 orng = #d65d0e
 gold = #F8D210
 
+og = #285577
+
 ; From Dracula
 
 green = #50fa7b
@@ -80,7 +82,7 @@ font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
 font-5 = Font Awesome 5 Brands:pixelsize=12;2
 font-6 = JetBrains Mono:pixelsize=11:antialias=false;1
 
-modules-left = i3 
+modules-left = i3 xwindow
 modules-center = mpd filesystem 
 modules-right = memory pulseaudio spotify date
 
@@ -161,7 +163,10 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+;label = "  %title:0:30:...%  " 
+label = "  %title%  " 
+label-background = #285577
+label-foreground = #eeeeee
 
 [module/spotify]
 type = custom/script
@@ -234,19 +239,20 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-background = #285577
 ;label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-foreground = #bbbbbb
+label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
