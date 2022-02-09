@@ -83,7 +83,7 @@ font-5 = Font Awesome 5 Brands:pixelsize=12;2
 font-6 = JetBrains Mono:pixelsize=11:antialias=false;1
 
 modules-left = i3 xwindow
-modules-center = mpd filesystem 
+modules-center = mpd 
 modules-right = memory pulseaudio spotify date
 
 tray-position = right
@@ -204,8 +204,8 @@ mount-0 = /
 ;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-mounted =  "  [ Free: %free% ] "
 label-unmounted = %mountpoint% not mounted
-label-mounted-foreground = ${colors.dull}
-label-unmounted-foreground = ${colors.blue_gray}
+label-mounted-foreground = #E4E5E8
+label-unmounted-foreground = #E4E5E8
 
 [module/bspwm]
 type = internal/bspwm
