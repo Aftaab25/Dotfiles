@@ -13,7 +13,7 @@ To Copy/Paste text from vim to other applications: </br>
 
 *Optional*
 
-I have configured my vim to use only two spaces for indentation instead of for python.
+I have configured my vim to use only two spaces for indentation instead of four for python.
 This can be done by adding these lines to your vimrc: </br>
 `let g:python_recommended_style = 0` </br>
 `let g:loaded_matchparen=1` </br>
