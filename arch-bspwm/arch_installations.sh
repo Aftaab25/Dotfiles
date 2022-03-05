@@ -34,7 +34,7 @@ yay -S eclipse-java
 echo -e "===============================================\n"
 echo -e "Installing Dev Tools\n"
 echo -e "===============================================\n"
-yay -S github-desktop-bin gimp krita obs-studio teams-for-linux
+yay -S github-desktop-bin gimp krita obs-studio teams-for-linux spectacle
 
 echo -e "===============================================\n"
 echo -e "Installing other apps\n"
