@@ -23,37 +23,17 @@ background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #ffffff
 foreground-alt = #ffffff
-
-; MY COLORS
-dull = #fbf1c7
-cyan = #00ffff
-magenta = #ff00ff
-blue_gray = #77A7B0
-pink = #ff79c6 
-orng = #d65d0e
-gold = #F8D210
-
-og = #285577
-
-; From Dracula
-
-green = #50fa7b
-red = #ff5555
-yellow = #f1fa8c
-cyan_drac = #8be9fd
-orange = #ffb86c
-purple = #bd93f9
-comment = #6272a4
-
-
-primary = #ffb52a
+primary = #bd93f9
+;primary = #b16286
 secondary = #e60053
 alert = #bd2c40
+
+;brown = #665C53
 
 [bar/example1]
 monitor = eDP1
 width = 100%
-height = 20
+height = 30
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
@@ -74,17 +54,18 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = fixed:pixelsize=11;1
+font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = Font Awesome 5 Free:pixelsize=12;2
 font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
 font-5 = Font Awesome 5 Brands:pixelsize=12;2
 font-6 = JetBrains Mono:pixelsize=11:antialias=false;1
+font-7 = FiraMono:pixelsize=12:antialias=false;1
 
 modules-left = i3 xwindow
-modules-center = mpd 
-modules-right = memory pulseaudio spotify date
+modules-center = mpd spotify 
+modules-right = pulseaudio memory battery date 
 
 tray-position = right
 tray-padding = 1
@@ -130,7 +111,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = fixed:pixelsize=10;0
+font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = Font Awesome 5 Free:pixelsize=12;2
@@ -163,20 +144,18 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-;label = "  %title:0:30:...%  " 
-label = "  %title%  " 
-label-background = #285577
-label-foreground = #eeeeee
+label =  " %title:0:70:...%"
+label-font = 8
 
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = ""
+format-prefix = "   "
+format-prefix-foreground = #689d6a
 ;format-background = #1db954
-format-foreground = ${colors.yellow}
-format = <label> 
-format-font = 7
-exec = python ~/.config/polybar/spotify_status.py -f '[{artist} - {song}] '
+format-foreground = #fbf1fc
+format = <label>
+exec = python ~/.config/polybar/spotify_status.py -f '{artist} - {song}' --font=8
 ;format-underline = #1db954
 
 [module/xkeyboard]
@@ -202,10 +181,9 @@ interval = 25
 mount-0 = /
 
 ;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-mounted =  "  [ Free: %free% ] "
+label-mounted =   %free%
 label-unmounted = %mountpoint% not mounted
-label-mounted-foreground = #E4E5E8
-label-unmounted-foreground = #E4E5E8
+label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
@@ -232,6 +210,7 @@ label-empty-padding = 2
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
+format-font = 8
 index-sort = true
 wrapping-scroll = false
 
@@ -245,14 +224,15 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = #285577
-;label-focused-underline= ${colors.primary}
+label-focused-background = ${colors.background-alt}
+;label-focused-background = #83a598
+label-focused-underline= ${colors.primary}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-foreground = #bbbbbb
 label-unfocused-padding = 1
+label-unfocused-background = ${colors.brown}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -263,10 +243,11 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 3
 
 ; Separator in between workspaces
 ; label-separator = |
+
 
 
 [module/mpd]
@@ -310,17 +291,19 @@ interval = 2
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
-format-foreground = ${colors.dull}
-label = "[ CPU:  %percentage:2%% ]  "
+label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "  "
-format-prefix-foreground = ${colors.mem}
+format-prefix = "  "
+format-prefix-foreground = #fabd2f
+format-prefix-background = ${colors.brown}
 ;format-underline = #4bffdc
-;format-foreground = ${colors.dullcyan_drac}
-label = "[ Mem:  %percentage_used%% ] "
+label = "%percentage_used%% "
+label-font = 8
+label-foreground = #fbf1c7
+label-background = ${colors.background}
 
 [module/wlan]
 type = internal/network
@@ -362,31 +345,35 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 1
+interval = 5
 
-date = "[%d/%b/%Y "
-date-alt = "[ %d/%m/%Y "
+date =
+date-alt = " %Y-%m-%d"
 
-time = "%H:%M:%S ]"
-time-alt = "%H:%M:%S ]"
+time = %H:%M
+time-alt = %H:%M:%S
 
-format-prefix =   
-format-prefix-foreground = ${colors.gold}
+format-prefix = ""
+format-prefix-foreground = #ff5555
 ;format-underline = #0a6cf5
 
 label = %date% %time%
-;format-foreground = ${colors.dull}
-format-foreground = #E4E5E8
+label-font = 8
+label-foreground = fbf1c7
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
+;format-volume = <label-volume> <bar-volume>
 format-volume = <label-volume>
-label-volume = "[ Vol: %percentage%% ] "
-label-volume-foreground = ${colors.dull}
+label-volume =  " %percentage%% " 
+label-volume-foreground = #ff79c6
+;label-volume-background= #665C54
+label-volume-font = 8
 
-label-muted = 🔇 muted
-label-muted-foreground = #666
+label-muted = "  muted "
+label-muted-font = 8
+label-muted-foreground = #ff5555
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -397,7 +384,7 @@ bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = %
+bar-volume-indicator = ||
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
@@ -440,22 +427,19 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
+label-charging = "%percentage%% "
+label-full = "%percentage%% "
+; label-full = Fully charged
 ;format-charging-underline = #ffb52a
+
+label-full-font = 8
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = "" 
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix = "  "
+format-full-prefix-foreground = #50fa7b
 ;format-full-underline = ${self.format-charging-underline}
-
-label-charging = "[ Battery: %percentage%% ] "
-label-full = "[ Battery: %percentage%% ] "
-label-discharging = "[ Battery: %percentage%% ] "
-
-label-charging-foreground = ${colors.yellow}
-label-full-foreground = ${colors.yellow}
-label-discharging-foreground = ${colors.yellow}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
