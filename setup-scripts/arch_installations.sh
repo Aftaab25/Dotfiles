@@ -23,13 +23,13 @@ yay -S jdk jre
 echo -e "===============================================\n"
 echo -e "Installing Browsers: Google Chrome, Epiphany, Brave\n"
 echo -e "===============================================\n"
-yay -S brave-bin google-chrome epiphany brave-bin
+yay -S brave-bin google-chrome epiphany
 
 echo -e "===============================================\n"
 echo -e "Installing IDEs and text-editors\n"
 echo -e "===============================================\n"
-yay -S intellij-idea-community-edition pycharm-community-edition visual-studio-code-insiders-bin visual-studio-code-bin geany
-yay -S sublime-text-4 notepadqq 
+yay -S intellij-idea-community-edition pycharm-community-edition visual-studio-code-bin geany
+yay -S sublime-text-4
 
 echo -e "===============================================\n"
 echo -e "Installing Dev Tools\n"
@@ -39,7 +39,7 @@ yay -S github-desktop-bin gimp krita obs-studio
 echo -e "===============================================\n"
 echo -e "Installing other apps\n"
 echo -e "===============================================\n"
-yay -S spotify telegram-desktop-bin vlc okular libreoffice-still whatsapp-for-linux discord slack
+yay -S spotify telegram-desktop-bin vlc okular libreoffice-still whatsapp-for-linux discord slack-desktop
 #yay -S alacritty
 
 #installing oh-my-zsh
