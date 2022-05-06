@@ -4,7 +4,13 @@
 echo -e "===============================================\n"
 echo -e "Installing the following apps: \n1. Vim\n2. Neovim\n3. xsel(Clipboard for vim & neovim)\n4. nodejs\n5. npm\n6. yarn\n7. zsh\n8. tree\n9. tmux\n"
 echo -e "===============================================\n"
-sudo apt install vim htop neovim xsel nodejs gnome-tweaks curl wget npm yarn zsh tree tmux ubuntu-restricted-extras
+sudo apt install vim htop neovim xsel nodejs gnome-tweaks curl wget npm yarn tree tmux ubuntu-restricted-extras
+
+# Installing extra fonts
+sudo apt install fonts-firacode fonts-cascadia-code
+
+# Uncomment if you want to install zsh
+# sudo apt install zsh
 
 
 #installing oh-my-zsh
@@ -54,7 +60,7 @@ sudo apt install epiphany-browser
 echo -e "===============================================\n"
 echo -e "Installing other tools\n"
 echo -e "===============================================\n"
-sudo apt install notepadqq gimp krita obs-studio vlc geany dconf-editor
+sudo apt install gimp krita obs-studio vlc geany dconf-editor
 
 
 # installing Sublime text editor
@@ -70,10 +76,10 @@ sudo apt-get install sublime-text
 
 
 # installing Virtual Box
-echo -e "===============================================\n"
-echo -e "Installing Virtual Box\n"
-echo -e "===============================================\n"
-sudo apt install virtualbox virtualbox-ext-pack
+# echo -e "===============================================\n"
+# echo -e "Installing Virtual Box\n"
+# echo -e "===============================================\n"
+# sudo apt install virtualbox virtualbox-ext-pack
 
 
 # Installing vim-plug for vim and neovim
