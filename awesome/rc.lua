@@ -67,6 +67,21 @@ modkey = "Mod4"
 
 naughty.config.defaults['icon_size'] = 70
 
+-- For Battery Widget
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+
+-- For Spotify
+local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
+
+-- For Ram
+local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
+
+-- For CPU
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+
+-- For Github
+local github_contributions_widget = require("awesome-wm-widgets.github-contributions-widget.github-contributions-widget")
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
@@ -217,8 +232,10 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+            github_contributions_widget({username = 'aftaab25'}),
             wibox.widget.systray(),
+            ram_widget(),
+            battery_widget(),
             mytextclock,
             s.mylayoutbox,
         },
