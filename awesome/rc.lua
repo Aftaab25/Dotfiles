@@ -54,7 +54,7 @@ end
 beautiful.init("~/.config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -64,6 +64,8 @@ editor_cmd = terminal .. " -e " .. editor
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
+
+naughty.config.defaults['icon_size'] = 70
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -209,7 +211,6 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
             s.mytaglist,
             s.mypromptbox,
         },
@@ -352,6 +353,20 @@ clientkeys = gears.table.join(
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
+
+    -- Volume
+    awful.key({}, "XF86AudioRaiseVolume",      function () awful.util.spawn("amixer -D pulse sset Master 2%+", false)  end,
+              {description = "Increase Volume", group = "Volume"}),
+    awful.key({}, "XF86AudioLowerVolume",      function () awful.util.spawn("amixer -D pulse sset Master 2%-", false)  end,
+              {description = "Decrease Volume", group = "Volume"}),
+    awful.key({}, "XF86AudioMute",      function () awful.util.spawn("amixer -D pulse sset Master toggle", false)  end,
+              {description = "Decrease Volume", group = "Volume"}),
+    
+    -- Brightness
+    awful.key({}, "XF86MonBrightnessDown",      function () awful.util.spawn("xbacklight -dec 15", false)  end,
+              {description = "Decrease Brightness", group = "Brightness"}),
+    awful.key({}, "XF86MonBrightnessUp",      function () awful.util.spawn("xbacklight -inc 15", false)  end,
+              {description = "Increase Brightness", group = "Brightness"}),
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
@@ -561,12 +576,12 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
---client.connect_signal("mouse::enter", function(c)
---    c:emit_signal("request::activate", "mouse_enter", {raise = false})
---end)
+client.connect_signal("mouse::enter", function(c)
+    c:emit_signal("request::activate", "mouse_enter", {raise = false})
+end)
 --
---client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
---client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
