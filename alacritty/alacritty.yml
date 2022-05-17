@@ -151,7 +151,7 @@
     style: Bold Italic
 
   # Point size
-  size: 8.0
+  size: 8
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -178,32 +178,33 @@
 
  colors:
   primary:
-    background: '#1d1f21'
+    # background: '#1d1f21'
+    background: '#000000'
     foreground: '#c5c8c6'
 
   cursor:
     text: CellBackground
     cursor: CellForeground
 
-  normal:
-    black:   '0x665c54'
-    red:     '0xea6962'
-    green:   '0xa9b665'
-    yellow:  '0xe78a4e'
-    blue:    '0x7daea3'
-    magenta: '0xd3869b'
-    cyan:    '0x89b482'
-    white:   '0xdfbf8e'
+      # normal:
+      #   black:   '0x665c54'
+      #   red:     '0xea6962'
+      #   green:   '0xa9b665'
+      #   yellow:  '0xe78a4e'
+      #   blue:    '0x7daea3'
+      #   magenta: '0xd3869b'
+      #   cyan:    '0x89b482'
+      #   white:   '0xdfbf8e'
 
-  bright:
-    black:   '0x928374'
-    red:     '0xea6962'
-    green:   '0xa9b665'
-    yellow:  '0xe3a84e'
-    blue:    '0x7daea3'
-    magenta: '0xd3869b'
-    cyan:    '0x89b482'
-    white:   '0xdfbf8e'
+      # bright:
+      #   black:   '0x928374'
+      #   red:     '0xea6962'
+      #   green:   '0xa9b665'
+      #   yellow:  '0xe3a84e'
+      #   blue:    '0x7daea3'
+      #   magenta: '0xd3869b'
+      #   cyan:    '0x89b482'
+      #   white:   '0xdfbf8e'
 
   # Dim colors
   #
