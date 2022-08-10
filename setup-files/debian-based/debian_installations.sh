@@ -12,6 +12,13 @@ sudo apt install fonts-firacode fonts-cascadia-code
 # Uncomment if you want to install zsh
 # sudo apt install zsh
 
+# Installing Alacritty Terminal (Using PPA)
+echo -e "===============================================\n"
+echo -e "Installing Alacritty Terminal (Using PPA)\n"
+echo -e "===============================================\n"
+sudo add-apt-repository ppa:aslatter/ppa
+sudo apt update
+sudo apt install alacritty
 
 #installing oh-my-zsh
 #echo -e "===============================================\n"
