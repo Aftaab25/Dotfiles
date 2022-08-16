@@ -39,14 +39,17 @@ yay -S github-desktop-bin gimp krita obs-studio
 echo -e "===============================================\n"
 echo -e "Installing other apps\n"
 echo -e "===============================================\n"
-yay -S spotify telegram-desktop-bin vlc okular libreoffice-still whatsapp-for-linux discord slack-desktop
-#yay -S alacritty
+sudo pacman -S vlc
+yay -S youtube-music-desktop telegram-desktop-bin okular libreoffice-still whatsapp-for-linux discord slack-desktop
+yay -S alacritty
+
+sudo pacman -S flatpak
 
 #installing oh-my-zsh
-echo -e "===============================================\n"
-echo -e "Installing ohmyzsh\n"
-echo -e "===============================================\n"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#echo -e "===============================================\n"
+#echo -e "Installing ohmyzsh\n"
+#echo -e "===============================================\n"
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 #git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 #git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
