@@ -23,7 +23,8 @@ background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #ffffff
 foreground-alt = #ffffff
-primary = #bd93f9
+;primary = #bd93f9
+primary = #61AFEF
 ;primary = #b16286
 secondary = #e60053
 alert = #bd2c40
@@ -62,10 +63,11 @@ font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
 font-5 = Font Awesome 5 Brands:pixelsize=12;2
 font-6 = JetBrains Mono:pixelsize=11:antialias=false;1
 font-7 = FiraMono:pixelsize=12:antialias=false;1
+font-8 = Cascadia Code:pixelsize=12;1
 
 modules-left = i3 xwindow
-modules-center = mpd spotify 
-modules-right = pulseaudio memory battery date 
+modules-center = mpd 
+modules-right = pulseaudio memory date 
 
 tray-position = right
 tray-padding = 1
@@ -144,8 +146,8 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label =  " %title:0:70:...%"
-label-font = 8
+label =  " [%title:0:70:...%]"
+label-font = 9
 
 [module/spotify]
 type = custom/script
@@ -210,7 +212,7 @@ label-empty-padding = 2
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-format-font = 8
+format-font = 9
 index-sort = true
 wrapping-scroll = false
 
@@ -300,9 +302,9 @@ format-prefix = "  "
 format-prefix-foreground = #fabd2f
 format-prefix-background = ${colors.brown}
 ;format-underline = #4bffdc
-label = "%percentage_used%% "
-label-font = 8
-label-foreground = #fbf1c7
+label = "[Memory: %percentage_used%%] "
+label-font = 9
+;label-foreground = #fbf1c7
 label-background = ${colors.background}
 
 [module/wlan]
@@ -347,8 +349,8 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+date= "%Y/%m/%d"
+date-alt = "%Y/%m/%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -357,21 +359,22 @@ format-prefix = ""
 format-prefix-foreground = #ff5555
 ;format-underline = #0a6cf5
 
-label = %date% %time%
-label-font = 8
-label-foreground = fbf1c7
+label = "[%date% %time%]"
+label-font = 9
+;label-foreground = fbf1c7
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 ;format-volume = <label-volume> <bar-volume>
 format-volume = <label-volume>
-label-volume =  " %percentage%% " 
-label-volume-foreground = #ff79c6
+label-volume =  " [Volume %percentage%%] " 
+;label-volume-foreground = #ff79c6
+;label-volume-foreground = #ABB2BF
 ;label-volume-background= #665C54
-label-volume-font = 8
+label-volume-font = 9
 
-label-muted = "  muted "
+label-muted = "  [Volume muted] "
 label-muted-font = 8
 label-muted-foreground = #ff5555
 
@@ -427,8 +430,8 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-label-charging = "%percentage%% "
-label-full = "%percentage%% "
+label-charging = "[Charging: %percentage%%] "
+label-full = "[Battery: %percentage%%] "
 ; label-full = Fully charged
 ;format-charging-underline = #ffb52a
 
