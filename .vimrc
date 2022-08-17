@@ -43,6 +43,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
@@ -55,11 +56,20 @@ nnoremap <C-l> <C-w>l
 "let g:gruvbox_transparent_bg = 1
 "colorscheme gruvbox
 
-if (has("autocmd") && !has("gui_running"))
-  augroup colorset
-    autocmd!
-    let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
-    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
-  augroup END
+" if (has("autocmd") && !has("gui_running"))
+"   augroup colorset
+"     autocmd!
+"     let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
+"     autocmd ColorScheme * call codedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
+"   augroup END
+" endif
+
+if &term == "alacritty"        
+  let &term = "xterm-256color"
 endif
-colorscheme onedark
+
+let g:airline#extensions#whitespace#enabled = 0
+
+let g:codedark_transparent=1
+let g:codedark_italics=1
+colorscheme codedark
