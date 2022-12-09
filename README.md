@@ -18,3 +18,11 @@ This can be done by adding these lines to your vimrc: </br>
 `let g:python_recommended_style = 0` </br>
 `let g:loaded_matchparen=1` </br>
 `filetype plugin indent on` </br>
+
+
+To enable os-prober for Arch Linux: </br>
+* Install `os-prober` (if not installed)
+* Try: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+* Open `/etc/default/grub` with vim: `sudo vim /etc/default/grub`
+* Check: `GRUB_DISABLE_OS_PROBER` and set it to `false`
+* Try again: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
