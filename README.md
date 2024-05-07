@@ -26,3 +26,10 @@ To enable os-prober for Arch Linux: </br>
 * Open `/etc/default/grub` with vim: `sudo vim /etc/default/grub`
 * Check: `GRUB_DISABLE_OS_PROBER` and set it to `false`
 * Try again: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+
+
+To fix the Postman Certificate issue:
+* Manually create the certificates in `~/.var/app/com.getpostman.Postman/config/Postman/proxy`:
+```bash
+    openssl req -subj '/C=US/CN=Postman Proxy' -new -newkey rsa:2048 -sha256 -days 365 -nodes -x509 -keyout postman-proxy-ca.key -out postman-proxy-ca.crt
+```
