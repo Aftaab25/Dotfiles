@@ -8,15 +8,15 @@
     /* background-color: #ffffff;
     color: #000000; */
     /* padding: 0px 8px; */
-    border-radius: 3px; /* Adjust the value for more or less rounding */
+    border-radius: 0px; /* Adjust the value for more or less rounding */
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(40, 85, 119, 1);
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: #ffffff;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: 0s;
 }
 
 window#waybar.hidden {
@@ -46,14 +46,14 @@ button {
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
-    border-radius: 2;
+    border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
+/*button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
+    box-shadow: inset 0 -3px #ffffff; 
+}*/
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
@@ -62,17 +62,21 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
-    background-color: transparent;
+    background-color: black;
     color: #ffffff;
 }
 
+
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: #000;
 }
 
+
 #workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: #285577;
+    /* box-shadow: inset 0 -3px #ffffff;*/
 }
 
 #workspaces button.urgent {
@@ -102,18 +106,20 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0px 8px;
-    color: #ffffff;
+    /* color: #ffffff; */
+    background-color: #000;
+    color: #000;
 }
 
 #window,
 #workspaces {
-    margin: 0 2px;
+    margin: 0 0px;
 }
 
 #window {
     padding: 0 6px;
-    color: #000000;
-    background-color: #ffffff;
+    color: #fff;
+    background-color: #285577;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -127,18 +133,15 @@ button:hover {
 }
 
 #clock {
-    color: #000000;
-    background-color: #ffffff;
+    color: #ffffff;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    color: #fff;
 }
 
 #battery.charging, #battery.plugged {
     color: #ffffff;
-    background-color: #26A65B;
 }
 
 @keyframes blink {
@@ -183,28 +186,24 @@ label:focus {
 }
 
 #cpu {
-    background-color: #ffffff;
-    color: #000000;
+    color: #fff;
+    margin: 0 0;
 }
 
 #memory {
-    color: #000000;
-    background-color: #ffffff;
+    color: #fff;
 }
 
 #disk {
-    color: #000000;
-    background-color: #ffffff;
+    color: #fff;
 }
 
 #backlight {
-    color: #000;
-    background-color: #ffffff;
+    color: #fff;
 }
 
 #network {
-    color: #000;
-    background-color: #ffffff;
+    color: #fff;
 }
 
 #network.disconnected {
@@ -212,8 +211,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #ffffff;
-    color: #000000;
+    color: #fff;
 }
 
 #pulseaudio.muted {
@@ -245,8 +243,7 @@ label:focus {
 }
 
 #temperature {
-    color: #000;
-    background-color: #ffffff;
+    color: #fff;
 }
 
 #temperature.critical {
@@ -254,7 +251,6 @@ label:focus {
 }
 
 #tray {
-    background-color: #ffffff;
 }
 
 #tray > .passive {
@@ -267,8 +263,7 @@ label:focus {
 }
 
 #idle_inhibitor {
-    color: #000;
-    background-color: #ffffff;
+    color: #fff;
 }
 
 #idle_inhibitor.activated {
@@ -294,8 +289,8 @@ label:focus {
 }
 
 #language {
-    background: #ffffff;
-    color: #000;
+    color: #fff;
+    background-color: #000;
     padding: 0 5px;
     /* margin: 0 5px; */
     min-width: 16px;
@@ -305,7 +300,7 @@ label:focus {
     background: #97e1ad;
     color: #000000;
     padding: 0 0px;
-    margin: 0 5px;
+    margin: 0 0px;
     min-width: 16px;
 }
 
@@ -348,7 +343,8 @@ label:focus {
 
 .custom-spotify {
     padding: 0 10px;
-    margin: 0 4px;
-    background-color: #1DB954;
-    color: black;
+    margin: 0 0px;
+    /* background-color: #1DB954; */
+    background-color: #000;
+    color: #fff;
 }

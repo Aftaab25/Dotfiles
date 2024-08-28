@@ -4,11 +4,10 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 16, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 3, // Gaps between modules (4px)
+    "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
-        "custom/spotify",
         "sway/window",
 	    "sway/mode",
         "sway/scratchpad"
@@ -17,6 +16,7 @@
         
     ],
     "modules-right": [
+        "custom/spotify",
         "idle_inhibitor",
         "pulseaudio",
         "network",
@@ -199,7 +199,7 @@
     },
     "custom/spotify": {
         "exec": "/usr/bin/python3 ~/scripts/spotify.py --player spotify",
-        "format": "{}  ",
+        "format": "[ {} ]", // 
         "return-type": "json",
         "on-click": "playerctl play-pause",
         // "on-scroll-up": "playerctl next",
