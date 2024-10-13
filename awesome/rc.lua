@@ -235,7 +235,7 @@ awful.screen.connect_for_each_screen(function(s)
             github_contributions_widget({username = 'aftaab25'}),
             wibox.widget.systray(),
             ram_widget(),
-            battery_widget(),
+            battery_widget({show_current_level = true}),
             mytextclock,
             s.mylayoutbox,
         },
