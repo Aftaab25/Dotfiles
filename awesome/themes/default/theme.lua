@@ -1,5 +1,5 @@
 ---------------------------
--- Default awesome theme --
+-- My awesome theme --
 ---------------------------
 
 local theme_assets = require("beautiful.theme_assets")
@@ -11,8 +11,12 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "JetBrains Mono Medium 10"
+-- theme.font          = "sans 8"
+-- theme.font          = "JetBrains Mono Medium 8"
+theme.font          = "Cascadia Code Medium 8"
 
+-- theme.bg_normal     = "#222222"
+-- theme.bg_focus      = "#535d6c"
 theme.bg_normal     = "#1d1f21"
 theme.bg_focus      = "#444444"
 theme.bg_urgent     = "#ff0000"
@@ -42,6 +46,7 @@ theme.border_marked = "#91231c"
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
+
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
@@ -57,8 +62,6 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
 
--- theme.notification_width == dpi(30)
-
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
@@ -70,7 +73,6 @@ theme.menu_width  = dpi(100)
 -- you wish and access them by using
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
-
 
 -- Define the image to load
 theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"
@@ -119,7 +121,7 @@ theme.layout_cornerne = themes_path.."default/layouts/cornernew.png"
 theme.layout_cornersw = themes_path.."default/layouts/cornersww.png"
 theme.layout_cornerse = themes_path.."default/layouts/cornersew.png"
 
-theme.tasklist_disable_icon = true
+-- theme.tasklist_disable_icon = true
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(
