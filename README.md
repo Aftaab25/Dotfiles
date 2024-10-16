@@ -2,6 +2,16 @@
 
 My dotfiles for various programs that I use.
 
+### Enable Natural Scrolling and Tap to Click
+
+```bash
+xinput set-prop 17 "libinput Natural Scrolling Enabled" 1
+```
+
+```bash
+xinput set-prop 17 "libinput Tapping Enabled" 1
+```
+
 ### Vim Config
 
 To Copy/Paste text from vim to other applications: </br>
