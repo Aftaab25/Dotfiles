@@ -4,12 +4,13 @@ My dotfiles for various programs that I use.
 
 ### Enable Natural Scrolling and Tap to Click
 
+Use `xinput list` to find the id of the touchpad device
 ```bash
-xinput set-prop 17 "libinput Natural Scrolling Enabled" 1
+xinput set-prop <id> "libinput Natural Scrolling Enabled" 1
 ```
 
 ```bash
-xinput set-prop 17 "libinput Tapping Enabled" 1
+xinput set-prop <id> "libinput Tapping Enabled" 1
 ```
 
 ### Vim Config
