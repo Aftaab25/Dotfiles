@@ -75,7 +75,7 @@ install_essential_apps() {
     echo -e "===============================================\n"
     echo -e "Installing essential apps: Vim, Neovim, xsel, nodejs, npm, yarn, zsh, tree, tmux\n"
     echo -e "===============================================\n"
-    sudo pacman -S vim htop neovim neofetch xsel nodejs npm yarn zsh tree tmux --noconfirm
+    sudo pacman -S --needed vim pavucontrol nitrogen htop neovim neofetch xsel nodejs npm yarn zsh tree tmux --noconfirm
     check_success "Essential apps installation"
 }
 
@@ -86,7 +86,7 @@ install_fonts() {
     echo -e "===============================================\n"
     echo -e "Installing Fonts: Courier-Code and JetBrainsMono\n"
     echo -e "===============================================\n"
-    yay -S ttf-courier-code ttf-jetbrains-mono --noconfirm
+    yay -S --needed ttf-courier-code ttf-jetbrains-mono --noconfirm
     check_success "Font installation"
 }
 
@@ -95,9 +95,9 @@ install_fonts() {
 # ============================================
 install_java() {
     echo -e "===============================================\n"
-    echo -e "Installing JAVA (jdk-17 & jre-17)\n"
+    echo -e "Installing JAVA (Latest: jdk-23 & jre-23)\n"
     echo -e "===============================================\n"
-    yay -S jdk jre --noconfirm
+    yay -S --needed jdk --noconfirm
     check_success "Java installation"
 }
 
@@ -108,7 +108,7 @@ install_browsers() {
     echo -e "===============================================\n"
     echo -e "Installing Browsers: Google Chrome, Epiphany, Brave\n"
     echo -e "===============================================\n"
-    yay -S brave-bin google-chrome epiphany --noconfirm
+    yay -S --needed brave-bin google-chrome epiphany --noconfirm
     check_success "Browser installation"
 }
 
@@ -119,8 +119,8 @@ install_ides_and_editors() {
     echo -e "===============================================\n"
     echo -e "Installing IDEs and Text Editors\n"
     echo -e "===============================================\n"
-    yay -S intellij-idea-community-edition pycharm-community-edition visual-studio-code-bin geany --noconfirm
-    yay -S sublime-text-4 --noconfirm
+    yay -S --needed jetbrains-toolbox visual-studio-code-bin --noconfirm
+    yay -S --needed sublime-text-4 --noconfirm
     check_success "IDEs and text editors installation"
 }
 
@@ -131,7 +131,7 @@ install_dev_tools() {
     echo -e "===============================================\n"
     echo -e "Installing Dev Tools: GitHub Desktop, GIMP, Krita, OBS Studio\n"
     echo -e "===============================================\n"
-    yay -S github-desktop-bin gimp krita obs-studio --noconfirm
+    yay -S --needed postman-bin insomnia-bin github-desktop-bin gimp krita obs-studio --noconfirm
     check_success "Development tools installation"
 }
 
@@ -140,11 +140,11 @@ install_dev_tools() {
 # ============================================
 install_other_apps() {
     echo -e "===============================================\n"
-    echo -e "Installing Other Apps: VLC, YouTube Music, Telegram, Discord, Slack, WhatsApp, Alacritty\n"
+    echo -e "Installing Other Apps: VLC, Inkscape, YouTube Music, Telegram, Discord, Slack, WhatsApp, Alacritty\n"
     echo -e "===============================================\n"
-    sudo pacman -S vlc --noconfirm
-    yay -S youtube-music-desktop telegram-desktop-bin okular libreoffice-still whatsapp-for-linux discord slack-desktop --noconfirm
-    yay -S alacritty --noconfirm
+    sudo pacman -S --needed vlc --noconfirm
+    yay -S --needed youtube-music-desktop telegram-desktop-bin okular libreoffice-still whatsapp-for-linux discord slack-desktop --noconfirm
+    yay -S --needed alacritty --noconfirm
     check_success "Other apps installation"
 }
 
@@ -155,7 +155,7 @@ install_flatpak() {
     echo -e "===============================================\n"
     echo -e "Installing Flatpak\n"
     echo -e "===============================================\n"
-    sudo pacman -S flatpak --noconfirm
+    sudo pacman -S --needed flatpak --noconfirm
     check_success "Flatpak installation"
 }
 
@@ -166,7 +166,7 @@ install_bash_completion() {
     echo -e "===============================================\n"
     echo -e "Installing Bash Completion\n"
     echo -e "===============================================\n"
-    sudo pacman -S bash-completion --noconfirm
+    sudo pacman -S --needed bash-completion --noconfirm
     check_success "Bash Completion installation"
 
     # Enable bash completion in ~/.bashrc if not already enabled
@@ -209,8 +209,8 @@ install_ides_and_editors
 install_dev_tools
 install_other_apps
 install_flatpak
-install_bash_completion
-install_vim_plug
+# install_bash_completion
+# install_vim_plug
 
 # ============================================
 # Final Message
